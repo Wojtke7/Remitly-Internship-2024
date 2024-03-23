@@ -1,4 +1,4 @@
 from json_parser import json_parser
 
-file_path = "JSON files/sample_policy1.json"
+file_path = "JSON_samples/sample_policy6.json"
 print(json_parser(file_path))

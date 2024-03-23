@@ -9,10 +9,8 @@ def json_parser(file_path: str):
     # Try block to check if the file structure is valid AWS Policy JSON 
     try:
         policy_body = data["PolicyDocument"]
-
         # Check if key is present
         policy_body["Version"]
-
         # It is possible that policy file contains multiple statements
         statements = policy_body["Statement"]
         # Because of multiple resources (one per statement), we provide a list to store multiple logical values
