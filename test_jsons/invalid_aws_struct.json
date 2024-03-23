@@ -1,0 +1,32 @@
+{
+    "PolicyDocument": {
+      "Statement": [
+        {
+          "Sid": "FirstStatement",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ChangePassword"
+          ]
+        },
+        {
+          "Sid": "SecondStatement",
+          "Effect": "Allow",
+          "Action": "s3:ListAllMyBuckets",
+          "Resource": "*"
+        },
+        {
+          "Sid": "ThirdStatement",
+          "Effect": "Allow",
+          "Resource": [
+            "arn:aws:s3:::confidential-data",
+            "arn:aws:s3:::confidential-data/*"
+          ],
+          "Condition": {
+            "Bool": {
+              "aws:MultiFactorAuthPresent": "true"
+            }
+          }
+        }
+      ]
+    }
+  }
