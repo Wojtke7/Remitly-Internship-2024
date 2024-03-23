@@ -1,18 +1,10 @@
 import json
 
 
-def check_json_resource(file_path: str):
-    # Try block to check if the JSON file exists
-    try:
-        with open(file_path, "r") as json_file:
-            data = json.load(json_file)
-
-    except json.decoder.JSONDecodeError:
-        raise ValueError("File structure is not valid JSON.")
-    except FileNotFoundError:
-        raise FileNotFoundError("Specified file does not exist.")
-    except (TypeError, ValueError, OSError):
-        raise Exception("An error occurred while processing the file.")
+def json_parser(file_path: str):
+        
+    with open(file_path, "r") as json_file:
+        data = json.load(json_file)
 
     # Try block to check if the file structure is valid AWS Policy JSON 
     try:

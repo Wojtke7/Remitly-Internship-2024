@@ -1,4 +1,4 @@
-from json_parser import check_json_resource
+from json_parser import json_parser
 
-policy_file_path = "JSON files/sample_policy1.json"
-print(check_json_resource(policy_file_path))
+file_path = "JSON files/sample_policy1.json"
+print(json_parser(file_path))
