@@ -45,7 +45,6 @@ class TestJsonParser(unittest.TestCase):
             check_json_resource(self.valid_AWS_json),
             [False, False, True]
         )
-
-
+        
 if __name__ == '__main__':
     unittest.main()

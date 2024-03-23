@@ -8,9 +8,11 @@ def check_json_resource(file_path: str):
             data = json.load(json_file)
 
     except json.decoder.JSONDecodeError:
-        return "File structure is not valid JSON."
-    except (FileNotFoundError, TypeError, ValueError, OSError):
-        return "File not found, try again."
+        raise ValueError("File structure is not valid JSON.")
+    except FileNotFoundError:
+        raise FileNotFoundError("Specified file does not exist.")
+    except (TypeError, ValueError, OSError):
+        raise Exception("An error occurred while processing the file.")
 
     # Try block to check if the file structure is valid AWS Policy JSON 
     try:
@@ -34,6 +36,6 @@ def check_json_resource(file_path: str):
                 bool_list.append(False)
 
     except KeyError:
-        return "File has invalid AWS Policy document structure."
+        raise KeyError("File has invalid AWS Policy document structure.")
 
     return bool_list
