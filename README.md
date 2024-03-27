@@ -23,7 +23,7 @@ Python 3.12 interpreter is the only condition needed to run the script. All libr
 
 ## Usage
 - User has at his disposal directory with sample JSON files to check how the script works.
-- Only place in code, that requires changes is `file_path` variable. User needs to enter correct file path to check other samples or own JSON files.
+- Only place in code, that requires changes is `file_path` variable in **main.py** file . User needs to enter correct file path to check other samples or own JSON files.
 - To execute the script go into **root** directory and type in terminal `python3 main.py`.
   ### Tests
 - When someone wishes to make changes in code, it is recommended to run prepared unit tests, to inspect if adjustments did not affect the script functionality correctness.
